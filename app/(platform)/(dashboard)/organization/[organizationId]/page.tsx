@@ -1,18 +1,25 @@
-import index from "@/actions/create-board";
-import {Button} from "@/components/ui/button";
+import { Suspense } from 'react'
 
-const OrganizationIdPage = () => {
-    return (
-        <div>
-            OrganizationIdPage
-            <form action={index}>
-                <input id="title" name="title" required placeholder="Enter a bird title" className="border border-black p-1" />
-                <Button type="submit">
-                    Submit
-                </Button>
-            </form>
-        </div>
-    )
+import { Separator } from '@/components/ui/separator'
+
+// import { checkSubscription } from '@/lib/subscription'
+import { BoardList } from './_components/board-list'
+import { Info } from './_components/info'
+
+const OrganizationIdPage = async () => {
+	// const isPro = await checkSubscription()
+
+	return (
+		<div className='w-full mb-20'>
+			<Info isPro={false} />
+			<Separator className='my-4' />
+			<div className='px-2 md:px-4'>
+				<Suspense fallback={<BoardList.Skeleton />}>
+					<BoardList />
+				</Suspense>
+			</div>
+		</div>
+	)
 }
 
-export default OrganizationIdPage;
+export default OrganizationIdPage

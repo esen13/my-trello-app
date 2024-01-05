@@ -1,26 +1,25 @@
-"use client";
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client'
 
-import { useEffect } from "react";
-import { useParams } from "next/navigation";
-import { useOrganizationList } from "@clerk/nextjs";
+import { useOrganizationList } from '@clerk/nextjs'
+import { useParams } from 'next/navigation'
+import { useEffect } from 'react'
 
-const orgControl = () => {
+const OrgControl = () => {
+	const params = useParams()
+	const { setActive } = useOrganizationList()
 
-    const params = useParams();
-    const { setActive } = useOrganizationList();
+	useEffect(() => {
+		if (!setActive) {
+			return
+		}
 
-    useEffect(() => {
-        if (!setActive) {
-            return;
-        }
+		setActive({
+			organization: params.organizationId as string,
+		})
+	}, [setActive, params.organizationId])
 
-        setActive({
-            organization: params.organizationId as string
-        });
-    }, [setActive, params.organizationId])
-
-
-    return null;
+	return null
 }
 
-export default orgControl;
+export default OrgControl

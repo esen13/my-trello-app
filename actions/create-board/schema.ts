@@ -1,8 +1,16 @@
-import {z} from "zod";
+import { z } from 'zod'
 
-export const CreateBoardZod = z.object({
-    title: z.string({
-        required_error: 'Title is required',
-        invalid_type_error: 'Title is invalid'
-    }).min(3, 'Title is short.')
+export const CreateBoard = z.object({
+	title: z
+		.string({
+			required_error: 'Title is required',
+			invalid_type_error: 'Title is required',
+		})
+		.min(3, {
+			message: 'Title is too short.',
+		}),
+	image: z.string({
+		required_error: 'Image is required',
+		invalid_type_error: 'Image is required',
+	}),
 })

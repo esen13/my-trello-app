@@ -1,47 +1,57 @@
 {
-  "name": "next-test-project",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev -- -p 3010",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@clerk/nextjs": "^4.27.2",
-    "@prisma/client": "^5.7.1",
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-separator": "^1.0.3",
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "lucide-react": "^0.292.0",
-    "next": "latest",
-    "prisma": "^5.7.1",
-    "react": "latest",
-    "react-dom": "latest",
-    "sonner": "^1.2.3",
-    "tailwind-merge": "^2.0.0",
-    "tailwindcss-animate": "^1.0.7",
-    "usehooks-ts": "^2.9.1",
-    "zod": "^3.22.4",
-    "zustand": "^4.4.7"
-  },
-  "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "autoprefixer": "latest",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
-    "postcss": "^8.4.23",
-    "tailwindcss": "latest",
-    "typescript": "latest"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  }
+	"name": "next-test-project",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -- -p 3010",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"shadcn-ui:add": "npx shadcn-ui@latest add",
+		"prisma:reset": "npx prisma migrate reset",
+		"prisma:generate": "npx prisma generate",
+		"prisma:studio": "npx prisma studio"
+	},
+	"dependencies": {
+		"@clerk/nextjs": "^4.27.2",
+		"@prisma/client": "^5.7.1",
+		"@radix-ui/react-accordion": "^1.1.2",
+		"@radix-ui/react-dialog": "^1.0.5",
+		"@radix-ui/react-label": "^2.0.2",
+		"@radix-ui/react-popover": "^1.0.7",
+		"@radix-ui/react-separator": "^1.0.3",
+		"@radix-ui/react-slot": "^1.0.2",
+		"@radix-ui/react-tooltip": "^1.0.7",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.0.0",
+		"lodash": "^4.17.21",
+		"lucide-react": "^0.292.0",
+		"next": "latest",
+		"prisma": "^5.7.1",
+		"react": "latest",
+		"react-dom": "latest",
+		"sonner": "^1.2.3",
+		"tailwind-merge": "^2.0.0",
+		"tailwindcss-animate": "^1.0.7",
+		"unsplash-js": "^7.0.19",
+		"usehooks-ts": "^2.9.1",
+		"zod": "^3.22.4",
+		"zustand": "^4.4.7"
+	},
+	"devDependencies": {
+		"@types/lodash": "^4.14.202",
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@types/react-dom": "latest",
+		"autoprefixer": "latest",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.3",
+		"postcss": "^8.4.23",
+		"tailwindcss": "latest",
+		"typescript": "latest"
+	},
+	"engines": {
+		"node": ">=18.0.0",
+		"npm": ">=8.0.0"
+	}
 }
